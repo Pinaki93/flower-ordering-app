@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/margin_16"
+    android:paddingRight="@dimen/margin_16"
+    android:paddingTop="@dimen/margin_8"
+    android:paddingBottom="@dimen/margin_8">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/two_line_image"
+        android:layout_width="@dimen/two_line_list_image_size"
+        android:layout_height="@dimen/two_line_list_image_size"
+        android:layout_gravity="center_vertical"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textColor="@color/md_grey_900"
+            android:textSize="@dimen/text_size_16"
+            tools:text="Two-Line item"/>
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="@dimen/text_size_14"
+            tools:text="secondary text"/>
+
+
+    </LinearLayout>
+</LinearLayout>

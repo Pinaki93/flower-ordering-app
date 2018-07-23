@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "com.pinaki.example.rxjavatest"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName "$rootProject.versionName"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "$rootProject.baseUrl_release")
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "$rootProject.baseUrl_debug")
+            buildConfigField("String", "BASE_IMG_URL", "$rootProject.base_url_image")
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:${rootProject.kotlin_version}"
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation "com.android.support:appcompat-v7:${rootProject.appcompat_version}"
+    implementation "com.android.support:design:${rootProject.appcompat_version}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.appcompat_version}"
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+
+    compile "com.google.dagger:dagger:${rootProject.dagger_version}"
+    implementation "com.google.dagger:dagger-android-support:${rootProject.dagger_version}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${rootProject.dagger_version}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.dagger_version}"
+
+    //retrofit and related dependencies
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.retrofit_version}"
+    implementation "com.squareup.okhttp3:okhttp:${rootProject.okhttp_version}"
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.retrofit_version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.okhttp_version}"
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation "com.github.bumptech.glide:glide:${rootProject.glide_version}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.glide_version}"
+
+    implementation "android.arch.persistence.room:runtime:$rootProject.room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.room_version"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.room_version"
+
+    implementation 'com.facebook.shimmer:shimmer:0.2.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.gordonwong:material-sheet-fab:1.2.1'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+

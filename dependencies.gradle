@@ -1,0 +1,27 @@
+ext {
+    // version meta data
+    compileSdkVersion = 28
+    minSdkVersion = 21
+    targetSdkVersion = 28
+
+    versionName = "1.0"
+    versionCode = 1
+
+    room_version = "1.1.1"
+
+    // dependencies
+    appcompat_version= '28.0.0-alpha3'
+    kotlin_version = '1.2.31'
+    gradle_version = '3.0.1'
+    retrofit_version = '2.4.0'
+    okhttp_version = '3.10.0'
+    rx_java_version = '2.1.16'
+    glide_version = '4.7.1'
+    dagger_version = '2.15'
+
+    // build config properties
+    baseUrl_debug = "\"http://services.hanselandpetal.com/\""
+    baseUrl_release = "\"http://services.hanselandpetal.com/\""
+    base_url_image = "\"http://services.hanselandpetal.com/photos/\""
+
+}
